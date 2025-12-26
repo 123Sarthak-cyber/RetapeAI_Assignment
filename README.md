@@ -4,9 +4,9 @@ This repository contains an automated system designed for ClearPath Finance to d
 ## 📁 Project Structure
   
 ├── voicemail_detector.py    # Core logic and DSP classes  
-├── main_audit.ipynb        # Google Colab notebook for batch processing
-├── clearpath_message.mp3   # The pre-recorded compliance message
-├── results/                # Folder containing the audit log and waveforms
+├── main_audit.ipynb        # Google Colab notebook for batch processing  
+├── clearpath_message.mp3   # The pre-recorded compliance message  
+├── results/                # Folder containing the audit log and waveforms  
 └── README.md               # You are here!
 ⚙️ How It WorksThe system processes audio chunks (100ms) and applies two filters:Frequency Filter: Scans for a peak magnitude between 950Hz and 1050Hz.Silence Filter: Monitors the decibel level. If it stays below -40dB for 1.2 seconds, it assumes the greeting is finished.📊 Audit Results (Sample)Following the processing of the 7 test files, the system generated the following audit log:File NameTriggerTimestampActioncall_01.mp3Beep6.42sDropped Messagecall_02.mp3Silence4.81sDropped Messagecall_03.mp3Beep5.10sDropped Message🎧 Listen to the DemoThe system generates a stitched audio file where you can hear the transition.Output Voice: "Hi, this is ClearPath Finance calling regarding your account. Please call us back at 800-555-0199. Thank you."💻 Installation & UsageClone the repo:Bashgit clone https://github.com/yourusername/voicemail-drop-system.git
 Install dependencies:Bashpip install numpy pydub scipy
