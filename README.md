@@ -140,7 +140,7 @@ voicemail-compliance-system/
 - FFmpeg (system dependency)
 
 Made by:
-## Sarthak Mazumder  
+## Sarthak Mazumder(IIT Kharagpur 2027)  
 Email Id - sarthakmazumder0901@gmail.com  
-phone no - 6297475467
+phone no - +91 6297475467
 
