@@ -139,7 +139,8 @@ voicemail-compliance-system/
 - PyDub >= 0.25.0
 - FFmpeg (system dependency)
 
-Made by: ## Sarthak Mazumder  
-Email Id - sarthakmazumder0901@gmail.com
+Made by:
+## Sarthak Mazumder  
+Email Id - sarthakmazumder0901@gmail.com  
 phone no - 6297475467
 
