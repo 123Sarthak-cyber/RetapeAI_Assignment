@@ -139,27 +139,7 @@ voicemail-compliance-system/
 - PyDub >= 0.25.0
 - FFmpeg (system dependency)
 
-## 📝 License
+Made by: ## Sarthak Mazumder  
+Email Id - sarthakmazumder0901@gmail.com
+phone no - 6297475467
 
-This project is provided as-is for compliance and automation purposes.
-
-## ⚠️ Legal Considerations
-
-This system is designed for legitimate business compliance use cases. Users must:
-- Comply with TCPA (Telephone Consumer Protection Act) regulations
-- Obtain proper consent before automated calling
-- Include required disclosures in all messages
-- Maintain opt-out mechanisms
-- Follow all applicable telecommunications laws
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## 📧 Support
-
-For questions or issues, please open a GitHub issue or contact the development team.
-
----
-
-**Built for ClearPath Finance** | Ensuring Compliant Voicemail Communications
