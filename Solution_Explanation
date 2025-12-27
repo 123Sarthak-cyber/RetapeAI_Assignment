@@ -33,8 +33,6 @@ When a call goes to voicemail:
 ## Solution Architecture
 
 ### High-Level Approach
-
-```
 Audio Input
     ↓
 [Beep Detection] ─────→ If beep: Drop at beep_end + 0.5s
@@ -46,12 +44,12 @@ Audio Input
 [Confidence Score] ────→ Assign reliability rating
     ↓
 Drop Timestamp
-```
+
 
 ### Three Detection Layers
 
 #### 1. Beep Detection (Primary Signal)
-**Confidence: HIGH**
+
 
 **How it works**:
 - Performs Short-Time Fourier Transform (STFT) on audio
