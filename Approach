@@ -1,28 +1,20 @@
 To drop a compliant voicemail for ClearPath Finance, the strategy focuses on a Dual-Trigger Detection System that ensures the message is delivered only after the recipient's greeting has fully concluded. This approach prioritizes the legal requirement that the consumer must hear the full disclosure and contact information.
 1. The Core Detection Logic: How We Think
 The system operates on the "Safety-First" principle, assuming that failing to drop a message is better than dropping a non-compliant, partial message. We process audio in 100ms chunks to balance real-time responsiveness with computational accuracy.
-
-Primary Path (The Beep): We use Fast Fourier Transform (FFT) to monitor the frequency domain. If we detect a dominant signal at 1000Hz (±50Hz), we identify it as a standard voicemail beep.
-
-Secondary Path (The Silence): If no beep is present, we calculate the Root Mean Square (RMS) volume. We look for a consistent "silence" period of at least 1.2 seconds to confirm the greeting has ended.
+  i.Primary Path (The Beep): We use Fast Fourier Transform (FFT) to monitor the frequency domain. If we detect a dominant signal at 1000Hz (±50Hz), we identify it as a standard voicemail beep.
+ ii.Secondary Path (The Silence): If no beep is present, we calculate the Root Mean Square (RMS) volume. We look for a consistent "silence" period of at least 1.2 seconds to confirm the greeting has ended.
 
 2. Handling Edge Cases
 A compliant strategy must account for the unpredictable nature of phone audio. Our approach addresses these specific scenarios:
-
-Static and Line Noise: Instead of looking for "zero" volume, we use a relative decibel threshold (e.g., -40dBFS) to distinguish between background static and actual speech.
-
-False Human Pauses: By requiring a 1,200ms silence buffer, we prevent the message from dropping while a person is just taking a natural breath between sentences.
-
-Frequency Variations: We apply a frequency tolerance to catch beeps that may be slightly off-pitch due to poor network quality or non-standard equipment.
-
-Stereo Audio: The system automatically converts stereo signals to mono to ensure volume measurements are accurate across all input types.
+  i.Static and Line Noise: Instead of looking for "zero" volume, we use a relative decibel threshold (e.g., -40dBFS) to distinguish between background static and actual speech.
+ ii.False Human Pauses: By requiring a 1,200ms silence buffer, we prevent the message from dropping while a person is just taking a natural breath between sentences.
+iii.Frequency Variations: We apply a frequency tolerance to catch beeps that may be slightly off-pitch due to poor network quality or non-standard equipment.
+ iv.Stereo Audio: The system automatically converts stereo signals to mono to ensure volume measurements are accurate across all input types.
 
 3. The Compliance Execution (The "Drop")
 Once the trigger is confirmed, the system executes the message drop with a built-in Compliance Offset.
-
-The Beep Offset: After a beep is detected, the system waits an additional 400ms before playing the audio. This prevents the message from starting while the beep is still sounding, ensuring the company name is heard clearly from the first syllable.
-
-The Message Content: The system drops the exact compliant recording: "Hi, this is ClearPath Finance calling regarding your account. Please call us back at 800-555-0199. Thank you.".
+  i.The Beep Offset: After a beep is detected, the system waits an additional 400ms before playing the audio. This prevents the message from starting while the beep is still sounding, ensuring the company name is heard clearly from the first syllable.
+ ii.The Message Content: The system drops the exact compliant recording: "Hi, this is ClearPath Finance calling regarding your account. Please call us back at 800-555-0199. Thank you.".
 
 4. Logic Audit and Reporting
 To explain the logic to stakeholders, every drop generates an Audit Log. This report lists the filename, the specific trigger method used (Beep vs. Silence), and the exact timestamp of the drop. This transparency allows for manual review of edge cases and ensures the system remains legally defensible.
