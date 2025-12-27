@@ -1,6 +1,6 @@
 To drop a compliant voicemail for ClearPath Finance, the strategy focuses on a Dual-Trigger Detection System that ensures the message is delivered only after the recipient's greeting has fully concluded. This approach prioritizes the legal requirement that the consumer must hear the full disclosure and contact information.
 
-1. The Core Detection Logic: How We Think
+1. **The Core Detection Logic: How We Think**
 The system operates on the "Safety-First" principle, assuming that failing to drop a message is better than dropping a non-compliant, partial message. We process audio in 100ms chunks to balance real-time responsiveness with computational accuracy.
 
 Primary Path (The Beep): We use Fast Fourier Transform (FFT) to monitor the frequency domain. If we detect a dominant signal at 1000Hz (±50Hz), we identify it as a standard voicemail beep.
